@@ -1,0 +1,53 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<section style="height:100%;">
+
+    <article class="content-section media border">
+        <img class="blog-inner-part-img rounded mx-auto d-block" src="{{ object.img.url }}"style:"border-radius:20px;">
+        <div class="media-body mx-4">
+          <div class="article-metadata">
+            <h2><a class="article-title" href="{% url 'gujarat_detail' object.id %}">{{ object.title }}</a></h2>
+          </div>
+          <p class="article-content">{{ object.content }}</p>
+          <a href="https://www.google.com/maps/place/{{object.address}}" target="blank">
+            <small><i class="fa fa-map-marker fa-lg px-2" aria-hidden ="true"></i>{{object.address}}</small>
+          </a>
+          <br><small><i class="fa fa-phone fa-lg px-2" aria-hidden ="true"></i>{{object.phone_number}}</small>
+          
+          <br>
+          <a class="btn btn-primary btn-lg" href="{{object.link}}">Read more</a>
+          <a class="btn btn-primary btn-lg" href="{% url 'gujarat_detail' object.id %}">Book Now</a>
+        </div>
+      
+      </article>
+  <div class="post" id="post">
+
+    <div class="container-fluid min-vh-100">
+
+        <h1 class="heading text-center pt-5">List of Doctor</span></h1>
+
+        <div class="box-container">
+
+    
+            <div class="box">
+              <img src="#" alt="">
+              <div class="content">
+                  <span>3 Year Experience</span>
+                  <a href="{% static 'default.jpg' %}">
+                      <h3>Shekhar Biswas</h3>
+                  </a>
+                  <p>These doctors give you drugs to numb your pain or to put you under during surgery, childbirth, or other procedures.
+                     They monitor your vital signs while you’re under anesthesia.</p>
+                  <a href="{% url 'appointment' %}"><button class="btn btn-outline-primary">Make appointment</button></a>
+              </div>
+          </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+  
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block title %}Logout{% endblock title %}
+{% block content %}
+<section style="height:80vh">
+    <div class= 'container form-main-content pt-5' style = "font-size:2rem">
+    
+        <div class="border py-5 px-5 " style="width:50%">
+            <h1>You have been logged out</h1>
+            <small class="text-muted pt-2">
+                <a href="{% url 'login'%}">Log In Again</a>
+            </small>
+        </div>
+</div>
+</section>
+
+{% endblock content %}
+
+  
+    

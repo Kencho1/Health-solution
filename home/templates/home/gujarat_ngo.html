@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<section style="height:100vh;">
+  <article class="content-section media border">
+    <img class="blog-inner-part-img rounded mx-auto d-block" src="{{ object.img.url }}"style:"border-radius:20px;">
+    <div class="media-body mx-4">
+      <div class="article-metadata">
+        <h2><a class="article-title" href="{% url 'gujaratNgo_detail' object.id %}"target="blank" >{{ object.title }}</a></h2>
+      </div>
+      <p class="article-content">{{ object.content }}</p>
+      <small><i class="fa fa-map-marker fa-lg px-2" aria-hidden ="true"></i>{{object.address}}</small>
+      <br><small><i class="fa fa-phone fa-lg px-2" aria-hidden ="true"></i>{{object.phone_number}}</small>
+      
+      <br>
+      <a class="btn btn-primary btn-lg" href="{{object.link}}">Read more</a>
+   
+    </div>
+  
+  </article>
+
+</section>
+  
+{% endblock content %}

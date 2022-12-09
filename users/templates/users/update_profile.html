@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block style %}
+.content-section-profile{
+  width:70%;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+}
+{% endblock style %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class ="container justify-content-center align-items-center" style="height:100%;">
+  <div class="content-section-profile">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user.profile.img.url }}">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group" enctype= "multipart/form-data">
+          <legend class="border-bottom mb-4">Profile Info</legend>
+          {{ u_form|crispy }}
+          {{ p_form|crispy }}
+      </fieldset>
+      <div class="form-group">
+          <button class="btn btn-info" type="submit">Update</button>
+      </div>
+    </form>
+</div>
+</div>
+   
+
+
+
+
+{% endblock content %}
+
+  
+    

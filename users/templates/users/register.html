@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+{% block title %}Registration{% endblock title %}
+{% block style %}
+.content-section-register{
+    width:60%;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+{% endblock style %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class= 'container form-main-content py-2' >
+    <div class = "content-section-register" >
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-info" type="submit">Sign up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account?
+                <a href="#" class="ml-2">Sign In</a>
+            </small>
+        </div>
+    </div>
+</div>
+    
+{% endblock content %}
+
+  
+    

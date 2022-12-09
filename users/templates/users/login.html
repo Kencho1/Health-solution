@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% block title %}Login{% endblock title %}
+{% load crispy_forms_tags %}
+{% block style %}
+.content-section-login {
+    width:70%;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+{% endblock style %}
+{% block content %}
+
+<div class= 'container form-main-content pt-5' style:"height:80vh;">
+    <div class="row">
+
+
+        <div class="col-md-8">
+            <div class = "content-section-login">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log in</legend style="font-size = 20px">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit" style= "width:50%">Log in</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Need An Account?
+                        <a href="{% url 'register' %}" class="ml-2">Sign Up Now</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+  
+    
